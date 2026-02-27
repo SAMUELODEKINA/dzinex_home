@@ -102,6 +102,70 @@
   border-radius: 2px;
 }
 
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 /* ===== Base Reset ===== */
 *,
 *::before,
@@ -198,6 +262,19 @@ ul {
   align-items: center;
   gap: 12px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-img {
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+  transform: rotate(-5deg) scale(1.05);
 }
 
 .logo-icon {
@@ -269,6 +346,23 @@ ul {
   transition: var(--transition-fast);
   text-transform: uppercase;
   letter-spacing: 1.5px;
+  position: relative;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary-gold);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links li a:hover::after {
+  width: 60%;
 }
 
 .navbar.scrolled .nav-links li a {
@@ -383,6 +477,7 @@ ul {
   width: 100%;
   max-width: 700px;
   padding-left: 16px;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-badge {
@@ -572,6 +667,7 @@ ul {
   text-align: center;
   max-width: 700px;
   margin: 0 auto 60px;
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .section-badge {
@@ -632,6 +728,14 @@ ul {
   width: 100%;
   height: 500px;
   object-fit: cover;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
 
 .about-image-overlay {
