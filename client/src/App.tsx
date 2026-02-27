@@ -43,6 +43,8 @@ import {
   FaStar,
   FaQuoteLeft,
   FaArrowRight,
+  FaChevronDown,
+  FaTh,
 } from "react-icons/fa";
 
 // Types
@@ -514,10 +516,12 @@ function App() {
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className="container">
           <div className="logo" onClick={() => scrollToSection("hero")}>
-            <div className="logo-icon">D</div>
+            <div className="logo-icon">
+              <FaTh />
+            </div>
             <div className="logo-text">
               <span className="company-name">DZINEX</span>
-              <span className="tagline">...where design meets reality</span>
+              <span className="tagline">Hybrid Construction</span>
             </div>
           </div>
 
@@ -690,10 +694,10 @@ function App() {
               <FaAward /> Trusted Construction Partner
             </div>
             <h1>
-              Building Your Dreams
-              <span>Into Reality</span>
+              Where design
+              <span>meets reality.</span>
             </h1>
-            <p className="hero-tagline">"...where design meets reality"</p>
+            <p className="hero-tagline">Dzinex Hybrid Construction Ltd.</p>
             <p>
               Dzinex Hybrid Construction Ltd is a leading Nigerian construction
               and real estate development company based in Abuja, delivering
@@ -702,24 +706,24 @@ function App() {
             </p>
             <div className="hero-buttons">
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="btn btn-primary"
-              >
-                <FaPhone /> Get a Free Consultation
-              </a>
-              <a
                 href="#properties"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("properties");
                 }}
+                className="btn btn-primary"
+              >
+                View Collection
+              </a>
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("contact");
+                }}
                 className="btn btn-outline"
               >
-                <FaHome /> View Properties For Sale
+                Contact Us
               </a>
             </div>
             <div className="hero-stats">
@@ -736,6 +740,13 @@ function App() {
                 <div className="stat-label">Years Experience</div>
               </div>
             </div>
+          </div>
+          <div
+            className="scroll-indicator"
+            onClick={() => scrollToSection("about")}
+          >
+            <span>Scroll</span>
+            <FaChevronDown />
           </div>
         </div>
       </section>
