@@ -40,6 +40,9 @@ import {
   FaCity,
   FaMap,
   FaUserTie,
+  FaStar,
+  FaQuoteLeft,
+  FaArrowRight,
 } from "react-icons/fa";
 
 // Types
@@ -354,6 +357,39 @@ const teamMembers: TeamMember[] = [
   { name: "Mr. Gideon Nweze", role: "Chief Admin Officer", initials: "GN" },
   { name: "Bldr. Emmanuel Ononiwu", role: "Project Manager", initials: "EO" },
   { name: "Engr. Chris Obiyor", role: "Site Engineer", initials: "CO" },
+];
+
+// Testimonials
+interface Testimonial {
+  name: string;
+  role: string;
+  initials: string;
+  rating: number;
+  text: string;
+}
+
+const testimonials: Testimonial[] = [
+  {
+    name: "Mr. Chukwuemeka Okafor",
+    role: "Property Owner, Maitama",
+    initials: "CkO",
+    rating: 5,
+    text: "Dzinex delivered our 4-bedroom duplex ahead of schedule and beyond our expectations. The quality of finishes and attention to detail is simply outstanding. I highly recommend them to anyone looking to build or buy property in Abuja.",
+  },
+  {
+    name: "Mrs. Ngozi Adeyemi",
+    role: "Real Estate Investor",
+    initials: "NA",
+    rating: 5,
+    text: "I've partnered with Dzinex on three investment projects and every single time they exceed expectations. Their team is professional, transparent, and delivers world-class results. They are truly where design meets reality.",
+  },
+  {
+    name: "Arch. Babatunde Salami",
+    role: "Commercial Developer, Idu",
+    initials: "BS",
+    rating: 5,
+    text: "As an architect, I have very high standards. Dzinex Hybrid Construction executed our commercial plaza project with precision and professionalism that impressed even our international clients. A trusted partner indeed.",
+  },
 ];
 
 function App() {
@@ -928,6 +964,85 @@ function App() {
                 <div className="why-icon">{item.icon}</div>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="cta-banner">
+        <div className="container">
+          <div className="cta-content" data-aos="fade-up">
+            <h2>Ready to Build Your Dream?</h2>
+            <p>
+              Contact us today for a free consultation and let our experts guide
+              you from design to delivery.
+            </p>
+            <div className="cta-buttons">
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("contact");
+                }}
+                className="btn btn-primary"
+              >
+                <FaPhone /> Start Your Project
+              </a>
+              <a
+                href="#properties"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("properties");
+                }}
+                className="btn cta-btn-outline"
+              >
+                View Properties <FaArrowRight />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section testimonials" id="testimonials">
+        <div className="container">
+          <div className="section-header" data-aos="fade-up">
+            <span className="section-badge">
+              <FaStar /> Client Reviews
+            </span>
+            <h2>What Our Clients Say</h2>
+            <p>
+              Don't just take our word for it — hear from the people who've
+              trusted us to build their dreams
+            </p>
+            <div className="section-divider"></div>
+          </div>
+          <div className="testimonials-grid">
+            {testimonials.map((t, index) => (
+              <div
+                className="testimonial-card"
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div className="testimonial-quote">
+                  <FaQuoteLeft />
+                </div>
+                <p className="testimonial-text">{t.text}</p>
+                <div className="testimonial-stars">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <FaStar key={i} />
+                  ))}
+                </div>
+                <div className="testimonial-author">
+                  <div className="testimonial-avatar">{t.initials}</div>
+                  <div className="testimonial-info">
+                    <h4>{t.name}</h4>
+                    <span>{t.role}</span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
