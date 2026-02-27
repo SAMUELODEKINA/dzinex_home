@@ -49,7 +49,6 @@
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  animation: fadeOut 0.5s ease 2s forwards;
 }
 
 .loading-content {
@@ -63,22 +62,6 @@
   width: 100px;
   height: 100px;
   object-fit: contain;
-  animation: logoAnimation 1.5s ease-in-out infinite;
-}
-
-@keyframes logoAnimation {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
 }
 
 .loading-text {
@@ -94,7 +77,6 @@
   font-weight: 800;
   color: var(--white);
   letter-spacing: 4px;
-  animation: textFadeIn 0.8s ease forwards;
 }
 
 .loading-tagline {
@@ -102,19 +84,6 @@
   color: var(--primary-gold);
   text-transform: uppercase;
   letter-spacing: 3px;
-  opacity: 0;
-  animation: textFadeIn 0.8s ease 0.3s forwards;
-}
-
-@keyframes textFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .loading-bar {
@@ -131,23 +100,6 @@
   height: 100%;
   background: var(--primary-gold);
   border-radius: 2px;
-  animation: loadingBar 2s ease-in-out forwards;
-}
-
-@keyframes loadingBar {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
 }
 
 /* ===== Base Reset ===== */

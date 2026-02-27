@@ -1,6 +1,4 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./App.css";
 
 // Icons from react-icons
@@ -424,21 +422,12 @@ function App() {
     // Loading screen timer
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
-    if (!loading) {
-      AOS.init({
-        duration: 800,
-        easing: "ease-out-cubic",
-        once: true,
-        offset: 50,
-      });
-    }
-
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
@@ -740,7 +729,7 @@ function App() {
       {/* Hero Section */}
       <section className="hero" id="hero">
         <div className="container">
-          <div className="hero-content" data-aos="fade-up">
+          <div className="hero-content">
             <div className="hero-badge">
               <FaAward /> Trusted Construction Partner
             </div>
@@ -806,7 +795,7 @@ function App() {
       <section className="section about" id="about">
         <div className="container">
           <div className="about-grid">
-            <div className="about-image" data-aos="fade-right">
+            <div className="about-image">
               <img
                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800"
                 alt="Dzinex Construction"
@@ -816,7 +805,7 @@ function App() {
                 <div className="text">Years of Excellence</div>
               </div>
             </div>
-            <div className="about-content" data-aos="fade-left">
+            <div className="about-content">
               <span className="section-badge">
                 <FaCity /> About Us
               </span>
@@ -854,7 +843,7 @@ function App() {
       {/* Services Section */}
       <section className="section services" id="services">
         <div className="container">
-          <div className="section-header" data-aos="fade-up">
+          <div className="section-header">
             <span className="section-badge">
               <FaTools /> Our Services
             </span>
@@ -866,13 +855,8 @@ function App() {
             <div className="section-divider"></div>
           </div>
           <div className="services-grid">
-            {services.map((service, index) => (
-              <div
-                className="service-card"
-                key={index}
-                data-aos="fade-up"
-                data-aos-delay={index * 50}
-              >
+            {services.map((service, idx) => (
+              <div className="service-card" key={idx}>
                 <div className="service-icon">{service.icon}</div>
                 <h3>{service.title}</h3>
                 <p>{service.desc}</p>
@@ -885,7 +869,7 @@ function App() {
       {/* Properties Section */}
       <section className="section properties" id="properties">
         <div className="container">
-          <div className="section-header" data-aos="fade-up">
+          <div className="section-header">
             <span className="section-badge">
               <FaHome /> Properties For Sale
             </span>
@@ -897,7 +881,7 @@ function App() {
             <div className="section-divider"></div>
           </div>
 
-          <div className="property-filters" data-aos="fade-up">
+          <div className="property-filters">
             {["All", "Residential", "Commercial"].map((filter) => (
               <button
                 key={filter}
@@ -910,13 +894,8 @@ function App() {
           </div>
 
           <div className="properties-grid">
-            {filteredProperties.map((property, index) => (
-              <div
-                className="property-card"
-                key={property.id}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
+            {filteredProperties.map((property) => (
+              <div className="property-card" key={property.id}>
                 <div className="property-image">
                   <img src={property.image} alt={property.name} />
                   <span
@@ -971,7 +950,7 @@ function App() {
       {/* Real Estate Development Section */}
       <section className="section real-estate" id="real-estate">
         <div className="container">
-          <div className="section-header" data-aos="fade-up">
+          <div className="section-header">
             <span className="section-badge">
               <FaCity /> Real Estate Development
             </span>
@@ -983,13 +962,8 @@ function App() {
             <div className="section-divider"></div>
           </div>
           <div className="real-estate-grid">
-            {realEstateServices.map((service, index) => (
-              <div
-                className="real-estate-card"
-                key={index}
-                data-aos="fade-up"
-                data-aos-delay={index * 50}
-              >
+            {realEstateServices.map((service, idx) => (
+              <div className="real-estate-card" key={idx}>
                 <div className="real-estate-icon">{service.icon}</div>
                 <div className="real-estate-content">
                   <h3>{service.title}</h3>
@@ -1004,7 +978,7 @@ function App() {
       {/* Why Choose Us Section */}
       <section className="section why-choose" id="why-choose">
         <div className="container">
-          <div className="section-header" data-aos="fade-up">
+          <div className="section-header">
             <span className="section-badge">
               <FaCheckCircle /> Why Choose Us
             </span>
@@ -1016,13 +990,8 @@ function App() {
             <div className="section-divider"></div>
           </div>
           <div className="why-choose-grid">
-            {whyChooseUs.map((item, index) => (
-              <div
-                className="why-card"
-                key={index}
-                data-aos="fade-up"
-                data-aos-delay={index * 50}
-              >
+            {whyChooseUs.map((item, idx) => (
+              <div className="why-card" key={idx}>
                 <div className="why-icon">{item.icon}</div>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
@@ -1035,7 +1004,7 @@ function App() {
       {/* CTA Banner */}
       <section className="cta-banner">
         <div className="container">
-          <div className="cta-content" data-aos="fade-up">
+          <div className="cta-content">
             <h2>Ready to Build Your Dream?</h2>
             <p>
               Contact us today for a free consultation and let our experts guide
@@ -1070,7 +1039,7 @@ function App() {
       {/* Testimonials Section */}
       <section className="section testimonials" id="testimonials">
         <div className="container">
-          <div className="section-header" data-aos="fade-up">
+          <div className="section-header">
             <span className="section-badge">
               <FaStar /> Client Reviews
             </span>
@@ -1082,13 +1051,8 @@ function App() {
             <div className="section-divider"></div>
           </div>
           <div className="testimonials-grid">
-            {testimonials.map((t, index) => (
-              <div
-                className="testimonial-card"
-                key={index}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
+            {testimonials.map((t, idx) => (
+              <div className="testimonial-card" key={idx}>
                 <div className="testimonial-quote">
                   <FaQuoteLeft />
                 </div>
@@ -1114,7 +1078,7 @@ function App() {
       {/* Team Section */}
       <section className="section team" id="team">
         <div className="container">
-          <div className="section-header" data-aos="fade-up">
+          <div className="section-header">
             <span className="section-badge">
               <FaUsers /> Our Team
             </span>
@@ -1123,13 +1087,8 @@ function App() {
             <div className="section-divider"></div>
           </div>
           <div className="team-grid">
-            {teamMembers.map((member, index) => (
-              <div
-                className="team-card"
-                key={index}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
+            {teamMembers.map((member, idx) => (
+              <div className="team-card" key={idx}>
                 <div className="team-image">
                   <div className="team-avatar">{member.initials}</div>
                 </div>
@@ -1170,7 +1129,7 @@ function App() {
       {/* Gallery Section */}
       <section className="section gallery" id="gallery">
         <div className="container">
-          <div className="section-header" data-aos="fade-up">
+          <div className="section-header">
             <span className="section-badge">
               <FaBuilding /> Projects Gallery
             </span>
@@ -1182,13 +1141,8 @@ function App() {
             <div className="section-divider"></div>
           </div>
           <div className="gallery-grid">
-            {galleryImages.map((image, index) => (
-              <div
-                className="gallery-item"
-                key={index}
-                data-aos="fade-up"
-                data-aos-delay={index * 50}
-              >
+            {galleryImages.map((image, idx) => (
+              <div className="gallery-item" key={idx}>
                 <img src={image.url} alt={image.title} />
                 <div className="gallery-overlay">
                   <h4>{image.title}</h4>
@@ -1206,7 +1160,7 @@ function App() {
       <section className="section contact" id="contact">
         <div className="container">
           <div className="contact-grid">
-            <div className="contact-info" data-aos="fade-right">
+            <div className="contact-info">
               <h2>Get In Touch</h2>
               <p>
                 Ready to start your project? Contact us today for a free
@@ -1252,7 +1206,7 @@ function App() {
               </div>
             </div>
 
-            <div className="contact-form-wrapper" data-aos="fade-left">
+            <div className="contact-form-wrapper">
               <form className="contact-form" onSubmit={handleContactSubmit}>
                 <h3>Send Us a Message</h3>
 
