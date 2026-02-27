@@ -44,7 +44,6 @@ import {
   FaQuoteLeft,
   FaArrowRight,
   FaChevronDown,
-  FaTh,
 } from "react-icons/fa";
 
 // Types
@@ -395,6 +394,7 @@ const testimonials: Testimonial[] = [
 ];
 
 function App() {
+  const [loading, setLoading] = useState<boolean>(true);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [activeFilter, setActiveFilter] = useState<string>("All");
@@ -421,12 +421,23 @@ function App() {
   });
 
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: "ease-out-cubic",
-      once: true,
-      offset: 50,
-    });
+    // Loading screen timer
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!loading) {
+      AOS.init({
+        duration: 800,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 50,
+      });
+    }
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -512,13 +523,35 @@ function App() {
 
   return (
     <div className="App">
+      {/* Loading Screen */}
+      {loading && (
+        <div className="loading-screen">
+          <div className="loading-content">
+            <img
+              src="/dzinez_hybrid_ogo.png"
+              alt="Dzinex Logo"
+              className="loading-logo"
+            />
+            <div className="loading-text">
+              <span className="loading-company">DZINEX</span>
+              <span className="loading-tagline">Hybrid Construction</span>
+            </div>
+            <div className="loading-bar">
+              <div className="loading-progress"></div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Navbar */}
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className="container">
           <div className="logo" onClick={() => scrollToSection("hero")}>
-            <div className="logo-icon">
-              <FaTh />
-            </div>
+            <img
+              src="/dzinez_hybrid_ogo.png"
+              alt="Dzinex Logo"
+              className="logo-img"
+            />
             <div className="logo-text">
               <span className="company-name">DZINEX</span>
               <span className="tagline">Hybrid Construction</span>
@@ -579,6 +612,16 @@ function App() {
                 }}
               >
                 Gallery
+              </a>
+            </li>
+            <li>
+              <a
+                href="/dzinex-profile.pdf"
+                download="Dzinex Hybrid Construction Ltd Profile.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Our Profile
               </a>
             </li>
             <li>
@@ -674,6 +717,14 @@ function App() {
           }}
         >
           Gallery
+        </a>
+        <a
+          href="/dzinex-profile.pdf"
+          download="Dzinex Hybrid Construction Ltd Profile.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Our Profile
         </a>
         <a
           href="#contact"
@@ -1294,7 +1345,11 @@ function App() {
           <div className="footer-grid">
             <div className="footer-brand">
               <div className="logo">
-                <div className="logo-icon">D</div>
+                <img
+                  src="/dzinez_hybrid_ogo.png"
+                  alt="Dzinex Logo"
+                  className="logo-img"
+                />
                 <div className="logo-text">
                   <span className="company-name">DZINEX</span>
                   <span className="tagline">...where design meets reality</span>
@@ -1386,6 +1441,16 @@ function App() {
                     }}
                   >
                     Projects Gallery
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/dzinex-profile.pdf"
+                    download="Dzinex Hybrid Construction Ltd Profile.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download Our Profile
                   </a>
                 </li>
               </ul>
