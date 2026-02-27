@@ -1336,6 +1336,168 @@ ul {
   font-weight: 600;
 }
 
+/* ===== CTA Banner ===== */
+.cta-banner {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(198, 40, 40, 0.92) 0%,
+      rgba(183, 28, 28, 0.95) 100%
+    ),
+    url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920")
+      center/cover no-repeat;
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 60%
+  );
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-content h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.cta-content p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 36px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn-outline {
+  background: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: var(--border-radius-xl);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  text-decoration: none;
+}
+
+.cta-btn-outline:hover {
+  background: var(--white);
+  color: var(--primary-red);
+}
+
+/* ===== Testimonials Section ===== */
+.testimonials {
+  background: var(--gray-100);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  padding: 36px 30px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+  border: 1px solid var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-gold);
+}
+
+.testimonial-quote {
+  font-size: 28px;
+  color: var(--primary-gold);
+  opacity: 0.8;
+}
+
+.testimonial-text {
+  font-size: 15px;
+  color: var(--gray-600);
+  line-height: 1.8;
+  flex: 1;
+  font-style: italic;
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 4px;
+  color: var(--primary-gold);
+  font-size: 16px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+}
+
+.testimonial-avatar {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.testimonial-info h4 {
+  font-size: 16px;
+  color: var(--gray-800);
+  margin-bottom: 2px;
+}
+
+.testimonial-info span {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+
 /* ===== WhatsApp Button ===== */
 .whatsapp-btn {
   position: fixed;
@@ -1447,7 +1609,8 @@ ul {
   .properties-grid,
   .services-grid,
   .real-estate-grid,
-  .gallery-grid {
+  .gallery-grid,
+  .testimonials-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1529,7 +1692,8 @@ ul {
   .real-estate-grid,
   .gallery-grid,
   .why-choose-grid,
-  .team-grid {
+  .team-grid,
+  .testimonials-grid {
     grid-template-columns: 1fr;
   }
 
