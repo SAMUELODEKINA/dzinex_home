@@ -523,7 +523,7 @@ function App() {
             />
             <div className="loading-text">
               <span className="loading-company">DZINEX</span>
-              <span className="loading-tagline">Hybrid Construction</span>
+              <span className="loading-tagline">Hybrid Construction Ltd</span>
             </div>
             <div className="loading-bar">
               <div className="loading-progress"></div>
@@ -543,7 +543,7 @@ function App() {
             />
             <div className="logo-text">
               <span className="company-name">DZINEX</span>
-              <span className="tagline">Hybrid Construction</span>
+              <span className="tagline">Hybrid Construction Ltd</span>
             </div>
           </div>
 

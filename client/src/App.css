@@ -243,7 +243,7 @@ ul {
 }
 
 .tagline {
-  font-size: 9px;
+  font-size: 11px;
   color: var(--gray-500);
   font-style: normal;
   text-transform: uppercase;
@@ -390,7 +390,7 @@ ul {
 }
 
 .hero h1 {
-  font-size: clamp(48px, 7vw, 80px);
+  font-size: clamp(52px, 8vw, 90px);
   color: var(--white);
   margin-bottom: 24px;
   line-height: 1.05;
@@ -408,7 +408,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 16px;
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.95);
   font-style: normal;
   margin-bottom: 40px;
@@ -1899,13 +1899,13 @@ ul {
   }
 
   .hero h1 {
-    font-size: clamp(28px, 8vw, 42px);
+    font-size: clamp(36px, 10vw, 52px);
     margin-bottom: 16px;
     word-wrap: break-word;
   }
 
   .hero-tagline {
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 2px;
     margin-bottom: 30px;
   }
@@ -2100,8 +2100,7 @@ ul {
   }
 
   .logo-text .tagline {
-    font-size: 7px;
-    display: none;
+    font-size: 8px;
   }
 
   .navbar {
@@ -2114,18 +2113,18 @@ ul {
   }
 
   .hero h1 {
-    font-size: clamp(24px, 7vw, 36px);
+    font-size: clamp(34px, 10vw, 48px);
   }
 
   .hero-tagline {
-    font-size: 9px;
-    letter-spacing: 1px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
     flex-wrap: wrap;
   }
 
   .btn {
     padding: 12px 20px;
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 1px;
   }
 
@@ -2253,18 +2252,18 @@ ul {
   }
 
   .hero h1 {
-    font-size: 22px;
+    font-size: 28px;
     line-height: 1.2;
   }
 
   .hero-tagline {
-    font-size: 8px;
+    font-size: 10px;
     letter-spacing: 1px;
   }
 
   .btn {
     padding: 10px 16px;
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 0.5px;
   }
 
@@ -2273,11 +2272,11 @@ ul {
   }
 
   .section-header h2 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .about-content h2 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .logo-text .company-name {
