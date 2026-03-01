@@ -1316,7 +1316,7 @@ function App() {
               </p>
               <div className="footer-social">
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/share/1FfJGa3uWQ/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -1332,7 +1332,7 @@ function App() {
                   <FaTwitter />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/dzinexhybridhomes?igsh=MjJpM3B5OTFsM25q"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
