@@ -1187,9 +1187,9 @@ function App() {
                 </div>
                 <div className="contact-details">
                   <h4>Phone Numbers</h4>
-                  <a href="tel:+2347034684479">+234 (0)703 4684 479</a>
+                  <a href="tel:+2349121388014">+234 (0)912 1388 014</a>
                   <br />
-                  <a href="tel:+2348096909043">+234 (0)809 6909 043</a>
+                  <a href="tel:+2349138790417">+234 (0)913 8790 417</a>
                 </div>
               </div>
 
@@ -1464,10 +1464,10 @@ function App() {
               <h4>Contact</h4>
               <ul>
                 <li>
-                  <a href="tel:+2347034684479">+234 703 468 4479</a>
+                  <a href="tel:+2349121388014">+234 912 138 8014</a>
                 </li>
                 <li>
-                  <a href="tel:+2348096909043">+234 809 690 9043</a>
+                  <a href="tel:+2349138790417">+234 913 879 0417</a>
                 </li>
                 <li>
                   <a href="mailto:dzinexhybridconstruction@gmail.com">
@@ -1499,7 +1499,7 @@ function App() {
 
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/2347034684479"
+        href="https://wa.me/2349121388014"
         className="whatsapp-btn"
         target="_blank"
         rel="noopener noreferrer"
