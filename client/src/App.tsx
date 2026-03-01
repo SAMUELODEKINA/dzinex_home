@@ -1174,9 +1174,9 @@ function App() {
                 <div className="contact-details">
                   <h4>Our Office</h4>
                   <p>
-                    Mbora, Off Idu Industrial Layout
+                    Life Camp, Opp. Kado Fish Market
                     <br />
-                    Abuja FCT, Nigeria
+                    Abuja, Nigeria
                   </p>
                 </div>
               </div>
@@ -1476,11 +1476,11 @@ function App() {
                 </li>
                 <li>
                   <a
-                    href="https://maps.google.com/?q=Mbora,Abuja,Nigeria"
+                    href="https://maps.google.com/?q=Life+Camp,Abuja,Nigeria"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Mbora, Abuja FCT
+                    Life Camp, Abuja
                   </a>
                 </li>
               </ul>
